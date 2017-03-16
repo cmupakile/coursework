@@ -1,12 +1,16 @@
 class UserController < Sinatra::Base
 
+  set :root, File.join(File.dirname(__FILE__), '..')
+
+  set :root, Proc.new { File.join(root, "views")}
+
   get "/" do
     # request comes in. here a GET
     # whatever is returned
     "Hello World. This is the beginnning :)"
   end
 
-  get "/posts" do
+  get "/users" do
     # show everything
     "INDEX"
   end

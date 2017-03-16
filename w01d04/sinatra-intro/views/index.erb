@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index Page</title>
+  </head>
+  <body>
+
+    <nav>
+      <a href="/posts">Posts</a>
+      <a href="/posts/new"></a>
+    </nav>
+      <h1>Index Page</h1>
+      <ul>
+        <% @posts.each do |something| %>
+        <li><%= something.name %></li>
+        <% end %>
+      </ul>
+
+      <!-- <footer id = "prettDiv" class="pretty_looking_div">
+        <h2><p><%= puts @pretty_data%></p></h2>
+
+      </footer> -->
+
+
+  </body>
+</html>

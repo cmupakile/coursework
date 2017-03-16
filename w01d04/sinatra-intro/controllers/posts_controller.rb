@@ -1,44 +1,41 @@
 class PostController < Sinatra::Base
 
+  set :root, File.join(File.dirname(__FILE__), '..')
+
+  set :view, Proc.new { File.join(root, "views")}
+
+  $posts = [
+    Post.new("Post 1", "Post text here"),
+    Post.new("Post 2", "Post text here"),
+    Post.new("Post 3", "Post text here")
+  ]
   get "/" do
-    # request comes in. here a GET
-    # whatever is returned
-    "Hello World. This is the beginnning :)"
-  end
-
-  get "/posts" do
+# dummy data for the postng list
+@posts = $posts
     # show everything
-    "INDEX"
+
+    @pretty_data = Pretty.new("Dev Ops", "This would have a pretty description");
+
+    # dummy data to look pretty
+    # @pretty_data = [
+    #   Pretty.new("Dev Ops", "This would have a pretty description"),
+    #   Pretty.new("Web Dev", "This would have a pretty description"),
+    #   Pretty.new("SDET", "This would have a pretty description"),
+    #   Pretty.new("Testers", "This would have a pretty description")
+    # ]
+    erb :index
+
   end
 
-  post "/posts" do
-  # creating a post
-  "CREATE"
+  get "/new" do
+
+    erb   :new
   end
 
-  get "/posts/new" do
-    "NEW"
-    # show the form
-  end
+  get "/:id" do
+    @posts = $posts [:id]
 
-  get "/posts/:id/edit" do
-    "EDIT"
-    # edit the data
-  end
-
-  get "/posts/:id" do
-    "SHOW"
-    # show one post
-  end
-
-  put "/posts/:id" do
-    "UPDATE"
-    # update the data
-  end
-
-  delete "/posts/:id" do
-    "DELETE"
-    # delete data
+    @pretty_data = Pretty.new("Dev Ops", "This would have a pretty description");
   end
 
 end
