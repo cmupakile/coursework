@@ -1,0 +1,4 @@
+class StaffMember
+  
+
+end

@@ -1,0 +1,5 @@
+# frozen_string_literal: true
+# this is where the file goes to get anything we need to install
+source "https://rubygems.org"
+# gem "rails"
+gem 'mac-say', '~> 0.2.0'
