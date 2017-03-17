@@ -15,6 +15,9 @@ $users = [
 		User.new("Samuel", "hijklmno", "Male / Female")
 	]
 
+# method override
+use Rack::MethodOverride
+
 map "/users" do
 	use UsersController
 end

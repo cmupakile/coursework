@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Form</title>
+</head>
+<body>
+
+	<p>This is a form.</p>
+
+	<p>Enter your name:</p>
+
+<form action="/users/ <%= @id %>" method="POST">
+  <label>First name:</label>
+  <input type="text" name="firstname" value="<%= @user.first_name %>"><br>
+  <label>Last name:</label>
+  <input type="text" name="lastname" value="<%= @user.last_name %>"><br><br>
+  <input type="submit" value="Save Post">
+  <!-- forms can only do GET and POST requests -->
+  <!-- method override so that PUT request can be handled -->
+  <input type="hidden" name="_method" value="PUT">
+</form>
+
+
+</body>
+</html>
