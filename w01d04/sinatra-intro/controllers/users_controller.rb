@@ -1,48 +1,38 @@
-class UserController < Sinatra::Base
+class UsersController < Sinatra::Base
+#Inheritance
 
-  set :root, File.join(File.dirname(__FILE__), '..')
+	#set root as the parent-directory of the current file
+	set :root, File.join(File.dirname(__FILE__), '..')
 
-  set :root, Proc.new { File.join(root, "views")}
+	# sets the view directory correctly
+	set :views, Proc.new { File.join(root, "views")}
 
-  get "/" do
-    # request comes in. here a GET
-    # whatever is returned
-    "Hello World. This is the beginnning :)"
-  end
 
-  get "/users" do
-    # show everything
-    "INDEX"
-  end
 
-  post "/users" do
-  # creating a post
-  "CREATE"
-  end
+	get "/" do
+		@users = $users
+		erb :index
 
-  get "/users/new" do
-    "NEW"
-    # show the form
-  end
+	end
 
-  get "/users/:id/edit" do
-    "EDIT"
-    # edit the data
-  end
+	#New
+	get "/new" do
+		@users = $users
+    erb :new
+	end
 
-  get "/users/:id" do
-    "SHOW"
-    # show one post
-  end
+	#Show
+	get "/:id" do
+		id = params[:id].to_i
 
-  put "/users/:id" do
-    "UPDATE"
-    # update the data
-  end
+	@user = $users[id]
+	erb :usershow
+	end
 
-  delete "/users/:id" do
-    "DELETE"
-    # delete data
-  end
+	#Create
+	post "/" do
+		"Create"
+		erb :user
+	end
 
 end

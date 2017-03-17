@@ -1,10 +1,10 @@
 class Post
 
-  attr_accessor :name, :body
+		attr_accessor :name, :body
 
-  def initialize name,body
-    @name = name
-    @body = body
-  end
+		def initialize name, body
+			@name = name
+			@body = body
+		end
 
-end
+	end

@@ -3,14 +3,25 @@ require_relative "controllers/posts_controller.rb"
 require_relative "controllers/users_controller.rb"
 require_relative "controllers/static_controller.rb"
 require_relative "classes/post.rb"
+require_relative "classes/user.rb"
 
+$posts = [
+		Post.new("Post 1", "Some post text"),
+		Post.new("Post 2", "Some post text 2")
+	]
+
+$users = [
+		User.new("Osvaldo", "abcdefg", "Male / Female"),
+		User.new("Samuel", "hijklmno", "Male / Female")
+	]
 
 map "/users" do
-  use UserController
+	use UsersController
 end
 
-map "/posts" do    #using this map func, removes the need to have the word in the quotation marks
-  run PostController
+
+map "/posts" do
+	use PostsController
 end
 
 run StaticController

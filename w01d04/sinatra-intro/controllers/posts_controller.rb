@@ -1,41 +1,36 @@
-class PostController < Sinatra::Base
+class PostsController < Sinatra::Base
 
+  # sets root as the parent-directory of the current file
   set :root, File.join(File.dirname(__FILE__), '..')
 
-  set :view, Proc.new { File.join(root, "views")}
+  set :views, Proc.new { File.join(root, "views/posts") }
 
-  $posts = [
-    Post.new("Post 1", "Post text here"),
-    Post.new("Post 2", "Post text here"),
-    Post.new("Post 3", "Post text here")
-  ]
   get "/" do
-# dummy data for the postng list
-@posts = $posts
-    # show everything
 
-    @pretty_data = Pretty.new("Dev Ops", "This would have a pretty description");
+    # dummy data for testing
+    @posts = $posts
 
-    # dummy data to look pretty
-    # @pretty_data = [
-    #   Pretty.new("Dev Ops", "This would have a pretty description"),
-    #   Pretty.new("Web Dev", "This would have a pretty description"),
-    #   Pretty.new("SDET", "This would have a pretty description"),
-    #   Pretty.new("Testers", "This would have a pretty description")
-    # ]
     erb :index
-
   end
 
   get "/new" do
-
-    erb   :new
+    erb :new
   end
 
   get "/:id" do
-    @posts = $posts [:id]
 
-    @pretty_data = Pretty.new("Dev Ops", "This would have a pretty description");
+    id = params[:id].to_i
+
+    # dummy data
+    @post = $posts[id]
+
+    erb :show
+  end
+
+  post "/" do
+
+
+
   end
 
 end
