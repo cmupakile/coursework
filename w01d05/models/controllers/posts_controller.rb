@@ -8,7 +8,7 @@ class PostsController < Sinatra::Base
   get "/" do
 
     # dummy data for testing
-    @posts = $posts
+    @posts = PostModel.all
 
     erb :index
   end
@@ -20,6 +20,7 @@ class PostsController < Sinatra::Base
   get "/:id" do
 
     id = params[:id].to_i
+    @post = PostModel.find(@id)
 
     # dummy data
     @post = $posts[id]

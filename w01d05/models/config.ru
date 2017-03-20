@@ -4,6 +4,8 @@ require_relative "controllers/users_controller.rb"
 require_relative "controllers/static_controller.rb"
 require_relative "classes/post.rb"
 require_relative "classes/user.rb"
+require "pg"
+require_relative "models/post.rb"
 
 $posts = [
 		Post.new("Post 1", "Some post text"),
