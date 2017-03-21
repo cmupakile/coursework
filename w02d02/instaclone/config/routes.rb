@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'pictures' , to: 'pictures#index'
 
+  get 'pictures/:id/show' , to: 'pictures#show'
+
   get 'static/home'
 
   root 'static#home'

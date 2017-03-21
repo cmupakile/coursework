@@ -5,14 +5,24 @@ class PicturesController < ApplicationController
     render :'pictures/index'
   end
 
-  def find
-    @pictures = Picture.find
+  def show
+    @pictures = Picture.find(params[:id])
 
     # get "/:id" do
   	# 	id = params[:id].to_i
     #
   	# @user = $users[id]
   	# erb :usershow
+
+  end
+
+  def create
+
+    # #Create
+  	# post "/" do
+  	# 	"Create"
+  	# 	erb :user
+  	# end
 
   end
 end
