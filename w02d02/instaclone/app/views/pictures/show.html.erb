@@ -5,8 +5,13 @@
     <title>Show page</title>
   </head>
   <body>
-    <p><%= @pictures.img %></p>
+    <p><%= @pictures.id %></p>
+    <img src"<%= @pictures.img %>"/>
     <p><%= @pictures.caption %></p>
-
+<form action="<%= picture_path @pictures %>" method="POST">
+  <input type="submit" value="Delete">
+  <input type="hidden" name="_method" value = "delete">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+</form>
   </body>
 </html>

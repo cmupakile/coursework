@@ -9,3 +9,9 @@
 Picture.create({img: 'img.png' , caption: 'First image'})
 Picture.create({img: 'img.png1' , caption: 'Second image'})
 Picture.create({img: 'img.png2' , caption: 'Third image'})
+
+user = User.create({name: "Cyril"})
+
+user.pictures.push pic1
+user.pictures.push pic2
+user.pictures.push pic3
