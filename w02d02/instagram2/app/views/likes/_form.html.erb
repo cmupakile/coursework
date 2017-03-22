@@ -1,0 +1,7 @@
+<form class="" action="<%= picture_likes_path picture%>" method="Post">
+
+  <textarea name="like[liking]"></textarea>
+  <input type="submit" value="Like">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+</form>
