@@ -35,9 +35,12 @@ comm1.picture = pic1
 comm1.save
 comm2.picture = pic2
 comm2.save
-comm3.picture = pic2
+comm3.picture = pic3
 comm3.save
-comm4.picture = pic3
+comm4.picture = pic4
 comm4.save
 
-# pic1.comm1
+
+user1.liked.push pic2      like data
+user1.liked.push pic1
+user.liked.push pic3

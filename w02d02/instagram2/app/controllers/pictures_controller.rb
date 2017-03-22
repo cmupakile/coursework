@@ -28,6 +28,7 @@ end
 
   def create
     picture = Picture.create(picture_params)
+    
 
     redirect_to :pictures
   end
