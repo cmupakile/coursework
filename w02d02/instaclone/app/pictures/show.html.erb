@@ -1,0 +1,35 @@
+
+
+
+<h1>SHOW</h1>
+
+<div class="picture">
+  <p><%= @picture.id %></p>
+  <img src="<%= @picture.img %>" />
+  <p><%= @picture.caption %></p>
+  <form action="<%= picture_path @picture %>" method="POST">
+    <input type="submit" value="Delete">
+    <input type="hidden" name="_method" value="DELETE">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  </form>
+</div>
+
+
+
+<div class="comment">
+
+
+<%  @picture.comments.each do |comm| %>
+
+
+  <h1>  <%= comm.user.name %> <!-- comment which has a user give me their name -->
+        (<%= comm.user.comments.length %>) </h1> <!-- comment which has a user give me the number of comments they made -->
+  <h1>  <%= comm.body %> </h1>
+
+  <% end %>
+
+  <%end%>
+
+<%= render 'comments/form', picture :@picture  %> <!-- get the picture id -->
+
+</div>

@@ -1,43 +1,44 @@
 class PicturesController < ApplicationController
   def index
+
+    #load all the picturess
     @pictures = Picture.all
+
 
     render :'pictures/index'
   end
-
   def show
-    @pictures = Picture.find(params[:id])
 
-  render :'pictures/show'
+    #load all the pictures
 
+
+
+
+    @picture = Picture.find params[:id]
+    @comment = Comment.find params[:id]
+
+
+    render :'pictures/show'
   end
 
-  def create
-    # by using create. you save the object to the db too
-    picture = Picture.create(picture_params)
-    # #Create
-  	# post "/" do
-  	# 	"Create"
-  	# 	erb :user
-  	# end
+
+  def destroy
+    Picture.destroy params[:id]
     redirect_to :pictures
   end
 
-  def new
+def new
+end
 
+  def create
+    picture = Picture.create(picture_params)
+
+    redirect_to :pictures
   end
 
 private
   def picture_params
-    # only permit sending image and caption
     params.require(:picture).permit(:img , :caption)
-
-  end
-
-  def destroy
-    Picture.destroy params[:id]
-
-    redirect_to :'pictures'
 
   end
 end
