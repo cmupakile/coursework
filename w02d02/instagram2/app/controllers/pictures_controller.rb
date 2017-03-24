@@ -1,4 +1,8 @@
 class PicturesController < ApplicationController
+
+skip_before_action :require_login , only: [:new , :create]
+
+
   def index
 
     #load all the picturess
@@ -28,7 +32,7 @@ end
 
   def create
     picture = Picture.create(picture_params)
-    
+
 
     redirect_to :pictures
   end

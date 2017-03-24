@@ -1,0 +1,14 @@
+<h1> Log in </h1>
+
+<% if @message %>
+  <p><%= @message %></p>
+<% end %>
+
+<form class="" action="<%= sessions_path %>" method="post">
+  <div class="log_in_container">
+  E-mail: <input type="text" name="session[email]" value="123@hotmail.com"><br>
+  Password: <input type="password" name="session[password]" value="password"><br>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="submit" value="Submit">
+  </div>
+</form>

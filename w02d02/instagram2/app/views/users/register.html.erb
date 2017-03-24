@@ -1,0 +1,12 @@
+<h1>Register Page</h1>
+<p>Find me in app/views/users/register.html.erb</p>
+
+<form class="" action="<%= users_path %>" method="post">
+  <div class="register_container">
+  Name: <input type="text" name="user[name]" value="Cyril"><br>
+  E-mail: <input type="text" name="user[email]" value="123@hotmail.com"><br>
+  Password: <input type="password" name="user[password]" value="password"><br>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="submit" value="Submit">
+  </div>
+</form>

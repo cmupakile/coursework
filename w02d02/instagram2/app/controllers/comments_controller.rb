@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
  #get user#we will get this from the loged in user
  #get picture
  #load all the picturess
- user = User.find 1
+  user = User.find 1
   picture = Picture.find params[:picture_id]
 
   comment.picture = picture

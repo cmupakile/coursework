@@ -41,6 +41,6 @@ comm4.picture = pic4
 comm4.save
 
 
-user1.liked.push pic2      like data
-user1.liked.push pic1
-user.liked.push pic3
+user1.followers.push pic2
+user1.followers.push pic1
+user2.followes.push pic3
