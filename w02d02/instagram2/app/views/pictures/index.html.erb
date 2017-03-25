@@ -7,6 +7,7 @@
 <div class="picture">
   <% @pictures.each do |pic| %>
   <!-- <li><a href="/pictures/ <%= pic.id %>"> <%= pic.id %></a></li> -->
+    <img src="<%= pic.image.thumb.url %>" />
     <p><%= pic.caption%></p>
     <li><%= link_to pic.id , pic%></li>
 
