@@ -23,6 +23,6 @@ def require_login
   unless is_logged_in?
     session[:message] = "Please log in to access this section."
     redirect_to new_session_path #halts the request cycle
-end
+  end
 end
 end
