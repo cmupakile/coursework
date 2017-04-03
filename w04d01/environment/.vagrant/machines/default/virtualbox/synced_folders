@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/ubuntu/app":{"guestpath":"/home/ubuntu/app","hostpath":"/Users/Tech-A14/Development/coursework/w04d01/app","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/Tech-A14/Development/coursework/w04d01/environment","disabled":false,"__vagrantfile":true}}}
